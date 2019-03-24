@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>Student Table Demo</title>
+	<h:outputStylesheet library="css" name="student_table_demo.css" />
+</h:head>
+<h:body>
+
+	<h:dataTable value="#{studentDataUtil.students}" var="tempStudent"
+		border="1" styleClass="demo-table" headerClass="demo-table-header"
+		rowClasses="demo-table-odd-row,demo-table-even-row">
+		<h:column>
+			<f:facet name="header">First Name</f:facet>
+			#{tempStudent.firstName}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Last Name</f:facet>
+			#{tempStudent.lastName}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Email</f:facet>
+			#{tempStudent.email}
+		</h:column>
+	</h:dataTable>
+</h:body>
+</html>
